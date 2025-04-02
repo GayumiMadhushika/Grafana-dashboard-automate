@@ -1,0 +1,422 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": {
+            "type": "grafana",
+            "uid": "-- Grafana --"
+          },
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 2,
+    "links": [],
+    "panels": [
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P951FEA4DE68E13C5"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "continuous-BlPu"
+            },
+            "decimals": 1,
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "celsius"
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "sensor_data.IR Sensor 01"
+              },
+              "properties": [
+                {
+                  "id": "displayName",
+                  "value": "IR Sensor 01"
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "sensor_data.K Type Sensor 01"
+              },
+              "properties": [
+                {
+                  "id": "displayName",
+                  "value": "K Type Sensor 01"
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "sensor_data.Current Miller Sensor 01"
+              },
+              "properties": [
+                {
+                  "id": "displayName",
+                  "value": "Current Miller Sensor 01"
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "sensor_data.Current Mixer Sensor 01"
+              },
+              "properties": [
+                {
+                  "id": "displayName",
+                  "value": "Current Mixer Sensor 01"
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 6,
+          "x": 0,
+          "y": 0
+        },
+        "id": 1,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "value_and_name",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.5.2",
+        "targets": [
+          {
+            "query": "SELECT last(\"IR_Sensor_1\") AS \"IR Sensor 01\" FROM \"sensor_data\" WHERE \"device\" = '1' AND time > now() - 1h",
+            "rawQuery": true,
+            "refId": "A"
+          },
+          {
+            "query": "SELECT last(\"K_Type_Sensor_1\") AS \"K Type Sensor 01\" FROM \"sensor_data\" WHERE \"device\" = '1' AND time > now() - 1h",
+            "rawQuery": true,
+            "refId": "B"
+          },
+          {
+            "query": "SELECT last(\"Current_Miller_1\") AS \"Current Miller Sensor 01\" FROM \"sensor_data\" WHERE \"device\" = '1' AND time > now() - 1h",
+            "rawQuery": true,
+            "refId": "C"
+          },
+          {
+            "query": "SELECT last(\"Current_Mixer_1\") AS \"Current Mixer Sensor 01\" FROM \"sensor_data\" WHERE \"device\" = '1' AND time > now() - 1h",
+            "rawQuery": true,
+            "refId": "D"
+          }
+        ],
+        "title": "Device 1",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P951FEA4DE68E13C5"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "continuous-BlPu"
+            },
+            "decimals": 1,
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "celsius"
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "sensor_data.IR Sensor 02"
+              },
+              "properties": [
+                {
+                  "id": "displayName",
+                  "value": "IR Sensor 02"
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "sensor_data.K Type Sensor 02"
+              },
+              "properties": [
+                {
+                  "id": "displayName",
+                  "value": "K Type Sensor 02"
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "sensor_data.Current Miller Sensor 02"
+              },
+              "properties": [
+                {
+                  "id": "displayName",
+                  "value": "Current Miller Sensor 02"
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "sensor_data.Current Mixer Sensor 02"
+              },
+              "properties": [
+                {
+                  "id": "displayName",
+                  "value": "Current Mixer Sensor 02"
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 6,
+          "x": 6,
+          "y": 0
+        },
+        "id": 2,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "value_and_name",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.5.2",
+        "targets": [
+          {
+            "query": "SELECT last(\"IR_Sensor_2\") AS \"IR Sensor 02\" FROM \"sensor_data\" WHERE \"device\" = '2' AND time > now() - 1h",
+            "rawQuery": true,
+            "refId": "A"
+          },
+          {
+            "query": "SELECT last(\"K_Type_Sensor_2\") AS \"K Type Sensor 02\" FROM \"sensor_data\" WHERE \"device\" = '2' AND time > now() - 1h",
+            "rawQuery": true,
+            "refId": "B"
+          },
+          {
+            "query": "SELECT last(\"Current_Miller_2\") AS \"Current Miller Sensor 02\" FROM \"sensor_data\" WHERE \"device\" = '2' AND time > now() - 1h",
+            "rawQuery": true,
+            "refId": "C"
+          },
+          {
+            "query": "SELECT last(\"Current_Mixer_2\") AS \"Current Mixer Sensor 02\" FROM \"sensor_data\" WHERE \"device\" = '2' AND time > now() - 1h",
+            "rawQuery": true,
+            "refId": "D"
+          }
+        ],
+        "title": "Device 2",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P951FEA4DE68E13C5"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "continuous-BlPu"
+            },
+            "decimals": 1,
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "celsius"
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "sensor_data.IR Sensor 03"
+              },
+              "properties": [
+                {
+                  "id": "displayName",
+                  "value": "IR Sensor 03"
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "sensor_data.K Type Sensor 03"
+              },
+              "properties": [
+                {
+                  "id": "displayName",
+                  "value": "K Type Sensor 03"
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "sensor_data.Current Miller Sensor 03"
+              },
+              "properties": [
+                {
+                  "id": "displayName",
+                  "value": "Current Miller Sensor 03"
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "sensor_data.Current Mixer Sensor 03"
+              },
+              "properties": [
+                {
+                  "id": "displayName",
+                  "value": "Current Mixer Sensor 03"
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 6,
+          "x": 12,
+          "y": 0
+        },
+        "id": 3,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "value_and_name",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.5.2",
+        "targets": [
+          {
+            "query": "SELECT last(\"IR_Sensor_3\") AS \"IR Sensor 03\" FROM \"sensor_data\" WHERE \"device\" = '3' AND time > now() - 1h",
+            "rawQuery": true,
+            "refId": "A"
+          },
+          {
+            "query": "SELECT last(\"K_Type_Sensor_3\") AS \"K Type Sensor 03\" FROM \"sensor_data\" WHERE \"device\" = '3' AND time > now() - 1h",
+            "rawQuery": true,
+            "refId": "B"
+          },
+          {
+            "query": "SELECT last(\"Current_Miller_3\") AS \"Current Miller Sensor 03\" FROM \"sensor_data\" WHERE \"device\" = '3' AND time > now() - 1h",
+            "rawQuery": true,
+            "refId": "C"
+          },
+          {
+            "query": "SELECT last(\"Current_Mixer_3\") AS \"Current Mixer Sensor 03\" FROM \"sensor_data\" WHERE \"device\" = '3' AND time > now() - 1h",
+            "rawQuery": true,
+            "refId": "D"
+          }
+        ],
+        "title": "Device 3",
+        "type": "stat"
+      }
+    ],
+    "preload": false,
+    "refresh": "5s",
+    "schemaVersion": 40,
+    "tags": [],
+    "templating": {
+      "list": []
+    },
+    "timepicker": {},
+    "timezone": "browser",
+    "title": "Automated Sensor Dashboard - DSI",
+    "uid": "sensor-dashboard",
+    "version": 27,
+    "weekStart": ""
+  }
