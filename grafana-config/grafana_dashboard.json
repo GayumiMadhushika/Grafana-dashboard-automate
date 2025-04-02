@@ -1,0 +1,46 @@
+{
+    "dashboard": {
+        "schemaVersion": 30,
+        "title": "Automated Sensor Dashboard",
+        "refresh": "5s",
+        "timezone": "browser",
+        "panels": [
+            {
+                "title": "Device 1",
+                "type": "stat",
+                "gridPos": { "x": 0, "y": 0, "w": 4, "h": 8 },
+                "targets": [
+                    { "refId": "A", "datasource": "InfluxDB", "rawQuery": true, "query": "SELECT last(\"IR_Sensor_1\") FROM \"sensor_data\" WHERE \"device\" = '1' AND time > now() - 1h" },
+                    { "refId": "B", "datasource": "InfluxDB", "rawQuery": true, "query": "SELECT last(\"K_Type_Sensor_1\") FROM \"sensor_data\" WHERE \"device\" = '1' AND time > now() - 1h" },
+                    { "refId": "C", "datasource": "InfluxDB", "rawQuery": true, "query": "SELECT last(\"Current_Miller_1\") FROM \"sensor_data\" WHERE \"device\" = '1' AND time > now() - 1h" },
+                    { "refId": "D", "datasource": "InfluxDB", "rawQuery": true, "query": "SELECT last(\"Current_Mixer_1\") FROM \"sensor_data\" WHERE \"device\" = '1' AND time > now() - 1h" }
+                ],
+                "fieldConfig": { "defaults": { "displayName": "Device 1 Sensors" } }
+            },
+            {
+                "title": "Device 2",
+                "type": "stat",
+                "gridPos": { "x": 4, "y": 0, "w": 4, "h": 8 },
+                "targets": [
+                    { "refId": "A", "datasource": "InfluxDB", "rawQuery": true, "query": "SELECT last(\"IR_Sensor_2\") FROM \"sensor_data\" WHERE \"device\" = '2' AND time > now() - 1h" },
+                    { "refId": "B", "datasource": "InfluxDB", "rawQuery": true, "query": "SELECT last(\"K_Type_Sensor_2\") FROM \"sensor_data\" WHERE \"device\" = '2' AND time > now() - 1h" },
+                    { "refId": "C", "datasource": "InfluxDB", "rawQuery": true, "query": "SELECT last(\"Current_Miller_2\") FROM \"sensor_data\" WHERE \"device\" = '2' AND time > now() - 1h" },
+                    { "refId": "D", "datasource": "InfluxDB", "rawQuery": true, "query": "SELECT last(\"Current_Mixer_2\") FROM \"sensor_data\" WHERE \"device\" = '2' AND time > now() - 1h" }
+                ],
+                "fieldConfig": { "defaults": { "displayName": "Device 2 Sensors" } }
+            },
+            {
+                "title": "Device 3",
+                "type": "stat",
+                "gridPos": { "x": 8, "y": 0, "w": 4, "h": 8 },
+                "targets": [
+                    { "refId": "A", "datasource": "InfluxDB", "rawQuery": true, "query": "SELECT last(\"IR_Sensor_3\") FROM \"sensor_data\" WHERE \"device\" = '3' AND time > now() - 1h" },
+                    { "refId": "B", "datasource": "InfluxDB", "rawQuery": true, "query": "SELECT last(\"K_Type_Sensor_3\") FROM \"sensor_data\" WHERE \"device\" = '3' AND time > now() - 1h" },
+                    { "refId": "C", "datasource": "InfluxDB", "rawQuery": true, "query": "SELECT last(\"Current_Miller_3\") FROM \"sensor_data\" WHERE \"device\" = '3' AND time > now() - 1h" },
+                    { "refId": "D", "datasource": "InfluxDB", "rawQuery": true, "query": "SELECT last(\"Current_Mixer_3\") FROM \"sensor_data\" WHERE \"device\" = '3' AND time > now() - 1h" }
+                ],
+                "fieldConfig": { "defaults": { "displayName": "Device 3 Sensors" } }
+            }
+        ]
+    }
+}
